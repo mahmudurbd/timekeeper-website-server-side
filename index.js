@@ -51,7 +51,7 @@ async function run() {
       console.log(result); 
       res.json(result);
   })
-/* ------------------ */
+
   // ADD ORDERS API
   app.post('/orders',async(req,res) => {
     const order = req.body;
@@ -84,7 +84,7 @@ app.delete('/orders/:id',async(req,res) => {
   console.log('Deleted',result);
   res.json({result,id});
 });
-/* --------------------------- */
+
    // GET REVIEWS
    app.get('/reviews', async(req,res) => {
     const cursor = reviewCollection.find({});
@@ -140,10 +140,7 @@ app.delete('/orders/:id',async(req,res) => {
       res.json(result);
     })
 
-    // Query for a movie that has the title 'Back to the Future'
-    /* const query = { title: 'Back to the Future' };
-    const movie = await movies.findOne(query);
-    console.log(movie); */
+    
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
